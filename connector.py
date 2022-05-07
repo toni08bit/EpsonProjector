@@ -21,9 +21,9 @@ keyList = {
     "USB-Display": ("SOURCE","51"),
     "USB": ("SOURCE","52"),
     "LAN": ("SOURCE","53"),
+    "ScreenMirroring": ("SOURCE","56"),
     # Keys
     "SourceSearch": ("KEY","67"),
-    "ScreenMirroring": ("SOURCE","56"),
     "AV-Mute": ("KEY","3E"),
     "Freeze": ("KEY","47"),
     "VolumeDown": ("KEY","57"),
@@ -38,11 +38,10 @@ getHeaders = {
 }
 
 
-class processingFunctions:
-    def sendCommand(commandParams):
-        address = destination["Prefix"] + destination["Host"] + ":" + destination["Port"] + "/cgi-bin/Remote/directsend"
-        response = requests.get(address,headers=getHeaders,params=commandParams,auth=HTTPDigestAuth("EPSONWEB","88888888"))
-        return response
+def sendCommand(commandParams):
+    address = destination["Prefix"] + destination["Host"] + ":" + destination["Port"] + "/cgi-bin/Remote/directsend"
+    response = requests.get(address,headers=getHeaders,params=commandParams,auth=HTTPDigestAuth("EPSONWEB","88888888"))
+    return response
 
 class luiCommands:
     def keyCommand():
