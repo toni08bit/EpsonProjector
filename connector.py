@@ -42,39 +42,3 @@ def sendCommand(commandParams):
     address = destination["Prefix"] + destination["Host"] + ":" + destination["Port"] + "/cgi-bin/Remote/directsend"
     response = requests.get(address,headers=getHeaders,params=commandParams,auth=HTTPDigestAuth("EPSONWEB","88888888"))
     return response
-
-class luiCommands:
-    def keyCommand():
-        repeat = 1
-        delay = 0
-        commandString = ""
-
-        try:
-            print(">>> Repeat? (Number)")
-            repeat = int(input())
-            print(">>> Delay? (Number)")
-            delay = int(input())
-            print(">>> Raw Command? (String)")
-            commandString = input()
-        except:
-            print("Could not read input. (Terminating...)")
-            return
-        
-        try:
-            if not keyList[commandString]:
-                print("Key does not exist. (Terminating...)")
-                return
-            if delay > 0:
-                print("Delaying... (" +  + ")")
-                time.sleep(delay)
-            for i in range(repeat + 1):
-                print("Sending... (" + str(i) + ")")
-                response = processingFunctions.sendCommand({
-                    keyList[commandString][0]: keyList[commandString][1]
-                })
-                print("Delivered. (Code: " + '"' + str(response.status_code) + '")')
-        except Exception as error:
-            print("Could not send command. (Following...)")
-            print(error)
-
-luiCommands.keyCommand()
