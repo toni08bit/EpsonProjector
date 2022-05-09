@@ -88,3 +88,5 @@ def consoleOptions():
     startTime = time.time()
     options[fireData["Function"]](fireData["Arguments"])
     print("FUNCTION COMPLETED! Duration: " + str(time.time() - startTime) + "s.")
+
+consoleOptions()
