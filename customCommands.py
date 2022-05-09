@@ -69,6 +69,11 @@ def consoleOptions():
     functionList = [method for method in dir(options) if method.startswith("__") is False]
     fireData = {}
 
+    print("----- FUNCTIONS -----")
+    for functionName in functionList:
+        print("- " + functionName.__name__)
+    print("----- FUNCTIONS -----")
+
     while not fireData["Function"]:
         print(">>> Function?")
         requestedFunction = input()
