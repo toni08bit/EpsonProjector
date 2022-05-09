@@ -5,8 +5,8 @@ import connector as Connector
 commands = {
     # Chains
     "TurnOff": (2,["Power"]),
-    "AV-Mute-Flicker": (6,["AV-Mute"]),
-    "Source-Flicker": (3,["HDMI2","HDMI1"]),
+    "AV-Mute-Flicker": (2,["AV-Mute"]),
+    "Source-Flicker": (2,["HDMI2","HDMI1"]),
     "MaxVolume": (15,["VolumeUp"]),
     "MinVolume": (15,["VolumeDown"]),
     # Singles
@@ -26,9 +26,15 @@ commands = {
 def sendCustomCommand(commandString):
     print("Preparing + Looping to send custom command to Connector... (3)")
 
-    customCommand = commands[commandString]
+    if commandString in commands:
+        print("Called custom command found... (3)")
+        customCommand = commands[commandString]
+    else:
+        print("WARNING: Called command not seen as a custom command, sending raw... (3)")
+        customCommand = (1,[Connector.keyList[commandString]])
+
     for loop in range(customCommand[0]):
-        print("Interating through predefined repeat count... (3." + int(loop + 1) + ")")
+        print("Interating through predefined repeat count... (3." + str(loop + 1) + ")")
         for command in customCommand[1]:
             print("FIRING COMMAND! Sending to Connector... (4)")
             response = Connector.sendCommand({
@@ -88,9 +94,7 @@ def consoleOptions():
     
     print("Packing and sending... (1)")
     startTime = time.time()
-    print(fireData["Function"])
-    print(fireData["Arguments"])
-    options[fireData["Function"]](fireData["Arguments"])
+    fireData["Function"](fireData["Arguments"])
     print("FUNCTION COMPLETED! Duration: " + str(time.time() - startTime) + "s.")
 
 consoleOptions()
