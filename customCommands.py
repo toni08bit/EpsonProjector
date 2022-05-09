@@ -71,14 +71,16 @@ def consoleOptions():
 
     print("----- FUNCTIONS -----")
     for functionName in functionList:
-        print("- " + functionName.__name__)
+        print("- " + functionName)
     print("----- FUNCTIONS -----")
 
-    while not fireData["Function"]:
+    while not "Function" in fireData.keys():
         print(">>> Function?")
         requestedFunction = input()
         if not (requestedFunction in functionList):
             print("ERROR: Couldn't find " + '"' + requestedFunction + '"' + "!")
+            continue
+        fireData["Function"] = options.__dict__[requestedFunction]
 
     print(">>> Arguments?")
     requestedArguments = input()
@@ -86,6 +88,8 @@ def consoleOptions():
     
     print("Packing and sending... (1)")
     startTime = time.time()
+    print(fireData["Function"])
+    print(fireData["Arguments"])
     options[fireData["Function"]](fireData["Arguments"])
     print("FUNCTION COMPLETED! Duration: " + str(time.time() - startTime) + "s.")
 
