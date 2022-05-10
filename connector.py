@@ -27,7 +27,12 @@ keyList = {
     "AV-Mute": ("KEY","3E"),
     "Freeze": ("KEY","47"),
     "VolumeDown": ("KEY","57"),
-    "VolumeUp": ("KEY","56")
+    "VolumeUp": ("KEY","56"),
+    "Ok": ("KEY","49"),
+    "Left": ("KEY","5A"),
+    "Up": ("KEY","58"),
+    "Right": ("KEY","5B"),
+    "Down": ("KEY","59")
 }
 
 getHeaders = {

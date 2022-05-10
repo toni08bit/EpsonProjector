@@ -19,7 +19,7 @@ def sendCustomCommand(commandString):
         customCommand = commands[commandString]
     else:
         print("WARNING: Called command not seen as a custom command, sending raw... (3)")
-        customCommand = (1,[Connector.keyList[commandString]])
+        customCommand = (1,[commandString])
 
     for loop in range(customCommand[0]):
         print("Interating through predefined repeat count... (3." + str(loop + 1) + ")")
