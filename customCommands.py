@@ -83,6 +83,6 @@ def consoleOptions():
     print("Packing and sending... (1)")
     startTime = time.time()
     fireData["Function"](fireData["Arguments"])
-    print("FUNCTION COMPLETED! Duration: " + str(time.time() - startTime) + "s.")
+    print("FUNCTION COMPLETED! Duration: " + str(round((time.time() - startTime) * 100) / 100) + "s.")
 
 consoleOptions()
