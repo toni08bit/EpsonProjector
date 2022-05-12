@@ -1,3 +1,4 @@
+print("Loading libraries...")
 import time
 import connector as Connector
 
