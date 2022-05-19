@@ -72,6 +72,8 @@ def consoleOptions():
     while not "Function" in fireData.keys():
         print(">>> Function?")
         requestedFunction = input()
+        if requestedFunction == "exit":
+            quit()
         if not (requestedFunction in functionList):
             print("ERROR: Couldn't find " + '"' + requestedFunction + '"' + "!")
             continue
