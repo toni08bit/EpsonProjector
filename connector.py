@@ -5,9 +5,13 @@ from requests.auth import HTTPDigestAuth
 
 destination = {
     "Prefix": "http://",
-    "Host": "192.168.88.1",
+    "Host": "192.168.88.1", # This might variate!
     "Port": "80",
     "Suffix": "/" 
+}
+credentials = {
+    "Username": "EPSONWEB",
+    "Password": "88888888" # Default is 8x "8" OR "admin" (!!!)
 }
 
 keyList = {
@@ -45,5 +49,5 @@ getHeaders = {
 
 def sendCommand(commandParams):
     address = destination["Prefix"] + destination["Host"] + ":" + destination["Port"] + "/cgi-bin/Remote/directsend"
-    response = requests.get(address,headers=getHeaders,params=commandParams,auth=HTTPDigestAuth("EPSONWEB","88888888"))
+    response = requests.get(address,headers=getHeaders,params=commandParams,auth=HTTPDigestAuth(credentials.get("Username"),credentials.get("Password")))
     return response
