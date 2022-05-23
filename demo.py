@@ -60,6 +60,12 @@ class options:
 
         sendCustomCommand(arguments[0])
 
+    def delayed(arguments):
+        print("Executing custom function with delay... (2)")
+
+        time.sleep(int(arguments[1]))
+        sendCustomCommand(arguments[0])
+
 def consoleOptions():
     functionList = [method for method in dir(options) if method.startswith("__") is False]
     fireData = {}
