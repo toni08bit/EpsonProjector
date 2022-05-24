@@ -13,8 +13,8 @@ This diagram might help you understand:
 
 
 ## Requirements
-No packages! This module is coded from scratch, by just using the "requests" (pre-installed) pip module to simulate a web session.
-Passwords and Usernames: Password configuration is located inside the "connector" module.
-Before running any commands: Enable and Connect to the Projectors WiFi or LAN.
-  You can enable WiFi inside the "Network" Settings Category.
+- No packages! This module is coded from scratch, by just using the "requests" (pre-installed) pip module to simulate a web session.
+- Passwords and Usernames: Password configuration is located inside the "connector" module.
+- Before running any commands: Enable and Connect to the Projectors WiFi or LAN.  
+  You can enable WiFi inside the "Network" Settings Category.  
   I have NOT found out the default WiFi password yet! Although you can set it at the same location where you have enabled the WiFi.
