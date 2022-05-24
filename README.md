@@ -8,6 +8,7 @@ This module allows you to do different things with your projector (Confirmed wor
 - A little "demo" (demo.py) which covers those easy functions
 
 This diagram might help you understand:
+
 ![Diagram](https://user-images.githubusercontent.com/95703244/169970116-f027b608-6bb5-4f73-ad5d-13e9ab33441a.png)
 
 
