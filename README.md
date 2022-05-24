@@ -6,6 +6,9 @@ This module allows you to do different things with your projector (Confirmed wor
 - A full key list which covers keycodes for every button there is on the physical remote
 - Easy functions to set elementary things, eg: Source or Power
 - A little "demo" (demo.py) which covers those easy functions
+This diagram might help you understand:
+![Diagram](https://user-images.githubusercontent.com/95703244/169970116-f027b608-6bb5-4f73-ad5d-13e9ab33441a.png)
+
 
 ## Requirements
 No packages! This module is coded from scratch, by just using the "requests" (pre-installed) pip module to simulate a web session.
