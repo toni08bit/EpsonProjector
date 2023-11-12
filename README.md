@@ -1,20 +1,24 @@
-# EpsonProjector
+# EpsonProjector v2 (incomplete, refer to v1)
 
 ## What's this?
-Took my time to explore the hacky firmware of Epson Projectors.
-This module allows you to do different things with your projector (Confirmed working with projector model "EB-992f"), including:
-- A full key list which covers keycodes for every button there is on the physical remote
-- Easy functions to set elementary things, eg: Source or Power
-- A little "demo" (demo.py) which covers those easy functions
+I am very certain that I am the first person ever to crack the Epson Projector's WiFi Network passwords and possibly the digital names for the remote control buttons, please read the following to understand.
 
-This diagram might help you understand:
+### It's NOT just ONE password
+Every Epson Projector that supports replacing the physical remote control with a remote control inside the Epson iProjection app, archieves communication via a publicly visible, but password-protected WiFi Network. Although the projector does not directly give you the wifi password in clear text, it does provide you with a qr code which you can scan with the iProjection app. The iProjection app then proceeds to decode the wifi password of the projector and join the wifi network, (without ever showing you the password of course).
 
-![Diagram](https://user-images.githubusercontent.com/95703244/169970116-f027b608-6bb5-4f73-ad5d-13e9ab33441a.png)
+Unfortunately iOS does not reveal WiFi passwords you have already entered, up until the 12th September of 2022 (the release of iOS 16), which reveals all of the wifi passwords that you have entered or that were shared with you.
 
+Luckily for us, I had physical access to multiple Epson Projectors on which I could log into their Remote Controls and put together a list of WiFi names and passwords! It was only a question of comprehending the link between the Projectors name and the unique wifi passwords.
+
+Fast-forwarding a few months: I have understood most of the logic of the passwords (and have included a very little of it in the repository), and also conducted a few successful tests with them.
 
 ## Requirements
-- No packages! This module is coded from scratch, by just using the "requests" (pre-installed) pip module to simulate a web session.
-- Passwords and Usernames: Password configuration is located inside the "connector" module.
-- Before running any commands: Enable and Connect to the Projectors WiFi or LAN.  
-  You can enable WiFi inside the "Network" Settings Category.  
-  I have NOT found out the default WiFi password yet! Although you can set it at the same location where you have enabled the WiFi.
+All of them COULD be pre-installed, please check before attempting to install.
+- PyPi "requests" module (pip install requests)
+- Linux "nmcli" command (apt install nmcli)
+
+## Limitations
+I have only confirmed the project to be working with projector IDs that start with EBE and have a -EE in them. This should cover most Epson projector models, but I might add support for other ones in the future, feel free to fork if you know what you're doing.
+
+## Usage Guide
+TODO
