@@ -25,23 +25,29 @@ key_list = {
     "right": ("KEY","5B"),
     "down": ("KEY","59")
 }
+panel_password = "admin"
 
 def _press_key(key_name):
+    print(f"Pressing '{key_name}'...")
     response = requests.get(
         url = "http://192.168.88.1:80/cgi-bin/Remote/directsend",
         params = {key_list[key_name]},
+        headers = {
+            "Referer": "http://192.168.88.1/cgi-bin/Remote/Basic_Control"
+        },
         auth = requests.auth.HTTPDigestAuth(
             "EPSONWEB",
-            "admin"
+            panel_password
         )
     )
+    print(f"Code: {response.status_code} (Length: {str(len(response.content))})")
     return response.ok
 
 def _check_interface():
     try:
         response = requests.get(
-            url = "http://192.168.88.1:80/cgi-bin/Remote/Basic_Control",
-            timeout = 5
+            url = "http://192.168.88.1:80/",
+            timeout = 5000
         )
         assert (response.status_code == 200)
         return True
