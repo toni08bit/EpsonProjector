@@ -45,47 +45,28 @@ The control.py script utilizes scripts from the /src/scripts folder, to simulate
     # This presses the "Volume Up" button five times
     key volume_up 5
 
-*Key Name (\<name\>) Reference*
-
-`power`: The Power Button. (*Some models require you to press the button twice, to confirm turning it off.*)
-
-`hdmi1`: Switch the input to the first HDMI port.
-
-`hdmi2`: Switch the input to the second HDMI port.
-
-`computer1`: Switch the input to the first VGA port.
-
-`computer2`: Switch the input to the second VGA port.
-
-`video`: Switch the input to the RCA (Composite Video) ports.
-
-`usb_display`: *SOURCE 51* (I do not know the difference between `usb` and `usb_display`, but the software uses 2 different IDs for them.)
-
-`usb`: *SOURCE 52*
-
-`lan`: Switch the input to LAN video.
-
-`screen_mirroring`: Switch the input to wirelessly transmitted video (e. g. iProjection)
-
-`source_search`: Makes the projector search through every source above to find a signal.
-
-`av_mute`: Button to toggle muting audio and video
-
-`freeze`: Button to freeze/unfreeze the current frame.
-
-`volume_down`: Lower the volume one step down (*Most models go up to 15 levels*)
-
-`volume_up`: raise the volume one step up
-
-`ok`: Press the OK button
-
-`left`: Press the <- button
-
-`up`: Press the /\ button
-
-`right`: Press the -> button
-
-`down`: Press the \/ button
+|**Key (\<name\>)**|**Function**|
+|---------|---------------|
+|`power`|The Power Button. (*Some models require you to press the button twice, to confirm turning it off.*)|
+|`hdmi1`|Switch the input to the first HDMI port.|
+|`hdmi2`|Switch the input to the second HDMI port.|
+|`computer1`|Switch the input to the first VGA port.|
+|`computer2`|Switch the input to the second VGA port.|
+|`video`|Switch the input to the RCA (Composite Video) ports.|
+|`usb_display`|*SOURCE 51* (I do not know the difference between `usb` and `usb_display`, but the software uses 2 different IDs for them.)|
+|`usb`|*SOURCE 52* (refer to `usb_display`)|
+|`lan`|Switch the input to LAN video.|
+|`screen_mirroring`|Switch the input to wirelessly transmitted video (e. g. iProjection)|
+|`source_search`|Makes the projector search through every source above to find a signal.|
+|`av_mute`|Button to toggle muting audio and video at the same time.|
+|`freeze`|Button to freeze/unfreeze the current frame.|
+|`volume_down`|Lower the volume one step down (*Most models go up to 15 or 20 levels*).|
+|`volume_up`|Raise the volume one step up.|
+|`ok`|Press the OK button.|
+|`left`|Press the <- button.|
+|`up`|Press the /\ button.|
+|`right`|Press the -> button.|
+|`down`|Press the \/ button.|
 
 **Sleep**
 *Syntax*
