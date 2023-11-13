@@ -1,6 +1,7 @@
+.env/
 __pycache__
-*.pyc
-/src/list.txt
-/src/passwords.txt
-/src/scripts
-!/src/scripts/examples/
+
+src/list.txt
+src/passwords.txt
+src/scripts/*
+!src/scripts/examples/*
