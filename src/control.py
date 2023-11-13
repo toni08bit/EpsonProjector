@@ -5,7 +5,8 @@ import _remote
 
 if (not _remote._check_interface()):
     print("[ERROR] Not connected to a supported projector.")
-    sys.exit()
+    sys.exit(1)
 
-# test
-_remote._press_key("ok")
+print("Please refer to the README.md for information about the simple scripts.")
+print("Enter script name: (e.g. turn_off)")
+requested_script = input()

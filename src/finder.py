@@ -3,6 +3,7 @@ import subprocess
 import time
 
 name_regex = re.compile(r'EBE[0-9A-Z]{5}-[A-Z]{2}[0-9]{2}[A-Za-z0-9@]{11}')
+ssid_position = 7
 
 running_subprocesses = []
 read_names = []
@@ -49,7 +50,7 @@ def get_list():
     for read_name in read_names:
         scanned_names.append(read_name)
     for line in list_process.stdout.readlines():
-        scanned_name = line.decode("utf-8").strip().split(":")[7]
+        scanned_name = line.decode("utf-8").strip().split(":")[ssid_position]
         if (scanned_name not in scanned_names):
             if (check_regex(scanned_name)):
                 print(f"!!! Adding: {scanned_name}")
