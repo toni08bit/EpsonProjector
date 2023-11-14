@@ -47,7 +47,7 @@ def _check_interface():
     try:
         response = requests.get(
             url = "http://192.168.88.1:80/",
-            timeout = 5000
+            timeout = 5
         )
         assert (response.status_code == 200)
         return True
