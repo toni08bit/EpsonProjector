@@ -3,3 +3,4 @@ __pycache__
 
 src/list.txt
 src/passwords.txt
+src/scripts/custom_*
