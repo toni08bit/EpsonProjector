@@ -1,5 +1,5 @@
 
-# EpsonProjector v2 (incomplete, refer to v1)
+# EpsonProjector v2
 ## What's this?
 I am very certain that I am the first person ever to crack the Epson Projector's WiFi Network passwords and possibly the digital names for the remote control buttons, please read the following to understand.
 
@@ -85,7 +85,7 @@ The control.py script utilizes scripts from the /src/scripts folder, to simulate
 
 *Example*
 
-    # This is not implemented yet.
+    # This is not implemented yet. (No plans to do so yet)
 
 ### finder.py
 The finder.py script can be ran to scan for Epson Projectors with their WiFi enabled and dump their SSIDs into the *list.txt* file. You might need to modify the `name_regex` and `ssid_position` variables based on your configuration (**but please don't touch them if everything is working as expected**).
